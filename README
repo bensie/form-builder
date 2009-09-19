@@ -1,0 +1,12 @@
+form-builder
+
+This form builder is currently a standalone app which you can pick out the 
+pieces you need for your app.
+
+Basically, you can create forms with any number of fields.  Text boxes, text 
+areas, check boxes, and select menus are currently supported.
+
+When forms are submitted, their content is stored and can be optionally sent
+to a selected email address.
+
+For use in production, you'd need to add your own access controls.

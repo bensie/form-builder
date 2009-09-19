@@ -1,0 +1,34 @@
+<% title "Form" %>
+
+<p>
+  <strong>Form Name:</strong>
+  <%=h @form.name %>
+</p>
+<p>
+  <strong>Send Notification To:</strong>
+  <%=h @form.email %>
+</p>
+<p>This form has <%= pluralize(@form.form_fields.size, "field") %> and <%= pluralize(@form.submissions.size, "submission") %>.</p>
+
+<h3>Fields</h3>
+<ul id="form_fields">
+  <% @form.form_fields.each do |form_field| %>
+    <% content_tag_for :li, form_field do %>
+      <span class="handle">[sort]</span>
+      <%= form_field.label %>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= sortable_element("form_fields", :url => sort_fields_form_path(@form), :handle => "handle") %>
+
+<p>
+  <%= link_to "View Submissions", form_submissions_path(@form) %> |
+  <%= link_to "Submit this form", new_form_submission_path(@form) %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_form_path(@form) %> |
+  <%= link_to "Delete", @form, :confirm => 'Are you sure? This will permanently remove the form, its fields, and any submissions.', :method => :delete %> |
+  <%= link_to "Back to all forms", forms_path %>
+</p>

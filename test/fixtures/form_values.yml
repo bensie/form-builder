@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  submission_id: 1
+  form_field_id: 1
+  entry: MyString
+  entry_datetime: 2009-09-18 16:40:29
+
+two:
+  submission_id: 1
+  form_field_id: 1
+  entry: MyString
+  entry_datetime: 2009-09-18 16:40:29

@@ -1,0 +1,8 @@
+<% title "Edit Submission" %>
+
+<%= render :partial => 'form' %>
+
+<p>
+  <%= link_to "Show", [@form, @submission] %> |
+  <%= link_to "View All", form_submissions_path(@form) %>
+</p>

@@ -1,0 +1,12 @@
+<p>
+  <%= form_value.form_field.label %>:
+  <% if !form_value.entry.nil? %>
+    <% if form_value.form_field.tag == "check_box" %>
+      <%= form_value.entry.to_i == 1 ? "Yes" : "No" %>
+    <% else %>
+      <%= form_value.entry %>
+    <% end %>
+  <% elsif !form_value.entry_datetime.nil? %>
+    <%= form_value.entry_datetime.strftime("%B %e, %Y") %>
+  <% end %>
+</p>

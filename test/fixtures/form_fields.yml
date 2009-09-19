@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  form_id: 1
+  label: MyString
+  tag: MyString
+  values: MyText
+  required: false
+  position: 1
+
+two:
+  form_id: 1
+  label: MyString
+  tag: MyString
+  values: MyText
+  required: false
+  position: 1

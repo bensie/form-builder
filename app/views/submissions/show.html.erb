@@ -1,0 +1,14 @@
+<% title "Submitted: " + @submission.form.name %>
+
+<p>
+  <strong>Submitted:</strong>
+  <%=h @submission.created_at.strftime("%B %e, %Y %I:%M%p") %>
+</p>
+
+<%= render :partial => 'form_value', :collection => @submission.form_values %>
+
+<p>
+  <%= link_to "Edit", edit_form_submission_path(@form, @submission) %> |
+  <%= link_to "Destroy", [@form, @submission], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", form_submissions_path(@form) %>
+</p>

@@ -1,0 +1,17 @@
+<% title "Submissions" %>
+
+<table>
+    <tr>
+      <th>Created at</th>
+    </tr>
+  <% @submissions.each do |submission| %>
+    <tr>
+      <td><%= submission.created_at.strftime("%B %e, %Y %I:%M%p") %></td>
+      <td><%= link_to "Show", [@form, submission] %></td>
+      <td><%= link_to "Edit", edit_form_submission_path(@form, submission) %></td>
+      <td><%= link_to "Destroy", [@form, submission], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Submission", new_form_submission_path(@form) %></p>

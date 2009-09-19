@@ -1,0 +1,29 @@
+<% form_for @form do |f| %>
+  <%= f.error_messages %>
+  <h3>Form Info</h3>
+  <p>
+    <%= f.label :name, "Give this form a name" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email, "Enter an email address that will receive form submissions" %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 50 %>
+  </p>
+  <p>
+    <%= f.check_box :published %> <%= f.label :published, "Publish this form and accept submissions" %>
+  </p>
+  
+  <h3>Form Fields</h3>
+  
+  <% f.fields_for :form_fields do |ff| %>
+    <%= render :partial => 'form_field', :locals => { :f => ff } %>
+  <% end %>
+  
+  <p><%= add_child_link "Add A Field", f, :form_fields %></p>
+  <br />
+  <p><%= f.submit "Save Form" %></p>
+<% end %>

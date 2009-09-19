@@ -1,0 +1,12 @@
+<% form_for [@form, @submission] do |f| %>
+  <%= f.error_messages %>
+  
+  <% f.fields_for :form_values do |ff| %>
+  
+    <%= ff.hidden_field :form_field_id, :value => ff.object.form_field.id %>
+    <%= generate_label_and_form_tag(ff) %>
+    
+  <% end %>
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<p>The <%= @submission.form.name %> form was just submitted.</p>
+
+<p>
+  Date/Time: <%= @submission.created_at.strftime("%B %e, %Y %I:%M%p") %>
+</p>
+
+<%= render :partial => 'submissions/form_value', :collection => @submission.form_values %>

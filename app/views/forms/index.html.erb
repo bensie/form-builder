@@ -1,0 +1,23 @@
+<% title "Forms" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Description</th>
+    <th>Published</th>
+  </tr>
+  <% for form in @forms %>
+    <tr>
+      <td><%=h form.name %></td>
+      <td><%=h form.email %></td>
+      <td><%=h form.description %></td>
+      <td><%=h form.published %></td>
+      <td><%= link_to "Show", form %></td>
+      <td><%= link_to "Edit", edit_form_path(form) %></td>
+      <td><%= link_to "Destroy", form, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Form", new_form_path %></p>
