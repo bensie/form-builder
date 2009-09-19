@@ -1,7 +1,7 @@
 form-builder
 
 This form builder is currently a standalone app which you can pick out the 
-pieces you need for your app.
+pieces you need for your app (I extracted it from a recent app).  Will package as a gem/generator soon with tests as that would be much more useful.
 
 Basically, you can create forms with any number of fields.  Text boxes, text 
 areas, check boxes, and select menus are currently supported.
